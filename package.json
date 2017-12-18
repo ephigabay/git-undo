@@ -1,0 +1,27 @@
+{
+  "name": "git-undo",
+  "version": "1.0.0",
+  "description": "Undoes mistakes you made in git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephigabay/git-undo.git"
+  },
+  "keywords": [
+    "git",
+    "undo"
+  ],
+  "author": "Ephi Gabay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ephigabay/git-undo/issues"
+  },
+  "homepage": "https://github.com/ephigabay/git-undo#readme",
+  "dependencies": {
+    "inquirer": "4.0.1",
+    "simple-git": "1.85.0"
+  }
+}
