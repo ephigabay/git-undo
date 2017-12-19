@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const git = require("simple-git")(process.cwd());
 
+console.log("Running in ", process.cwd());
+
 const BOOL_ANSWER = {
 	TRUE: "Yes",
 	FALSE: "No"
@@ -40,7 +42,7 @@ const FUNCTIONS = {
 	undoLocalCommit: function(args) {
 		// console.log("undoLocalCommit");
 		// console.log(JSON.stringify(args, null, " "));
-		runGitCommand("reset --soft")
+		runGitCommand("reset --soft HEAD~")
 		.catch(e => {
 			console.log("User canceled, aborting");
 		})
@@ -99,7 +101,7 @@ function runGitCommand(command) {
 		choices: getValues(BOOL_ANSWER)
 	}]).then(answers => {
 		if(answers["confirmation"] === BOOL_ANSWER.TRUE) {
-			return git.raw(command);
+			git.raw(command.split(" "));
 		} else {
 			throw "USER_CANCELED"
 		}
